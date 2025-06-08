@@ -1,15 +1,22 @@
 package com.marda.aquarium.app.Application.service;
 
 import com.marda.aquarium.app.Application.port.in.AquariumProductPortIn;
-import com.marda.aquarium.app.Domain.model.Aquarium;
+import com.marda.aquarium.app.Application.port.out.AquariumProductPortOut;
+import com.marda.aquarium.app.Domain.model.dto.AquariumProductDto;
 
 import java.util.List;
-import java.util.UUID;
 
 public class AquariumService implements AquariumProductPortIn {
-    @Override
-    public void createAquariumProductUseCase() {
+    private final AquariumProductPortOut aquariumProductPortOut;
 
+    public AquariumService(AquariumProductPortOut aquariumProductPortOut) {
+        this.aquariumProductPortOut = aquariumProductPortOut;
+    }
+
+    @Override
+    public AquariumProductDto createAquariumProductUseCase() {
+
+        return null;
     }
 
     @Override
@@ -18,8 +25,9 @@ public class AquariumService implements AquariumProductPortIn {
     }
 
     @Override
-    public void findAllAquariumProductUseCase() {
+    public List<AquariumProductDto> findAllAquariumProductUseCase() {
 
+        return null;
     }
 
     @Override

@@ -1,0 +1,23 @@
+services:
+  aquarium-products:
+    image: mysql:9.3.0
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - 3309:3306
+    expose:
+      - 3309:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${USERNAME_DB}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    volumes:
+      - ./mysql-aquarium-products:/var/lib/mysql
+
+volumes:
+  mysql-aquarium-products:
