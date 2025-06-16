@@ -10,4 +10,6 @@ public class AquariumProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+
 }
