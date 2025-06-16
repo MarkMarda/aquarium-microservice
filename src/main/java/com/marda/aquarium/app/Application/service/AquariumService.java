@@ -14,9 +14,12 @@ public class AquariumService implements AquariumProductPortIn {
     }
 
     @Override
-    public AquariumProductDto createAquariumProductUseCase() {
+    public void createAquariumProductUseCase(AquariumProductDto aquariumProductDto) {
+//        if (aquariumProductDto.getName() == aquariumProductDto.getName()) {
+//            throw new RuntimeException("This product is still in the DB");
+//        }
 
-        return null;
+        aquariumProductPortOut.registerAquariumProductUseCase(aquariumProductDto);
     }
 
     @Override
@@ -26,8 +29,7 @@ public class AquariumService implements AquariumProductPortIn {
 
     @Override
     public List<AquariumProductDto> findAllAquariumProductUseCase() {
-
-        return null;
+        return List.of();
     }
 
     @Override
